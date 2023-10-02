@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="stylecad.css">
+</head>
+<body>
+    <div class="page">
+        <form method="POST" class="formCadastro">
+            <img src="img/img0.png" alt="">
+            <p>Preencha o formulário abaixo para criar sua conta.</p>
+            <label for="nome">Nome</label>
+            <input type="text" placeholder="Digite seu nome" autofocus="true" />
+
+            <label for="cpf">CPF</label>
+            <input type="text" placeholder="Digite seu CPF" autofocus="true" />
+
+            <label for="email">E-mail</label>
+            <input type="email" placeholder="Digite seu e-mail" />
+
+            <label for="telefone">Telefone</label>
+            <input type="telefone" placeholder="Digite seu telefone" autofocus="true" />
+
+            <label for="endereco">Endereço</label>
+            <input type="text" placeholder="Digite seu endereço" autofocus="true" />
+
+            <label for="password">Senha</label>
+            <input type="password" id="password" placeholder="Digite sua senha" />
+
+            <label for="password">Confirme sua Senha</label>
+            <input type="password" id="confirmPassword" placeholder="Confirme sua senha" />
+            
+            <!-- Aqui foi feito uma div para exibir as mensagens de erro -->
+            <div id="passwordError" class="error-message"></div>
+
+            <input type="submit" value="Cadastrar" class="btn" />
+            <p>Já tem uma conta? <a href="index.html">Faça login</a></p> <!-- Aqui foi adicionado o link de volta para a tela de login -->
+        </form>
+        <script>
+            // Função para validar a senha
+            function validatePassword() {
+                const passwordInput = document.getElementById('password');
+                const confirmPasswordInput = document.getElementById('confirmPassword');
+                const passwordError = document.getElementById('passwordError');
+                const password = passwordInput.value;
+                const confirmPassword = confirmPasswordInput.value;
+
+                // Limpe mensagens de erro antigas
+                passwordError.innerHTML = '';
+
+                // Aqui foi criado uma variável para armazenar mensagens de erro
+                let errorMessage = '';
+
+                // Verifica as condições e adiciona mensagens de erro conforme necessário
+                if (password.length < 6) {
+                    errorMessage += 'A senha deve ter pelo menos 6 caracteres.<br>';
+                }
+                
+                if (!/[A-Z]/.test(password)) {
+                    errorMessage += 'A senha deve conter pelo menos 1 letra maiúscula.<br>';
+                }
+
+                if (!/[0-9]/.test(password)) {
+                    errorMessage += 'A senha deve conter pelo menos 1 número.<br>';
+                }
+
+                if (!/[@#$%^&+=]/.test(password)) {
+                    errorMessage += 'A senha deve conter pelo menos 1 caractere especial.<br>';
+                }
+
+                // Se houver mensagens de erro irá exibir
+                if (errorMessage) {
+                    passwordError.innerHTML = errorMessage;
+                    passwordError.style.color = 'red';
+                    return false;
+                }
+
+                // Verifique se as senhas coincidem
+                if (password !== confirmPassword) {
+                    passwordError.innerHTML = 'As senhas não coincidem.<br>';
+                    passwordError.style.color = 'red';
+                    return false;
+                }
+
+                // Se a senha atender a todos os critérios, retorne true
+                return true;
+            }
+
+            // Adicione um ouvinte de evento para o envio do formulário
+            const form = document.querySelector('.formCadastro');
+            form.addEventListener('submit', function (e) {
+                if (!validatePassword()) {
+                    e.preventDefault(); // Impedir o envio do formulário se a senha for inválida
+                }
+            });
+        </script>
+    </div>
+</body>
+</html>

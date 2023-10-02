@@ -1,0 +1,93 @@
+/* Reset de margens e preenchimentos para o body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFC0CB;
+    background-image: url("img/img1.png"); /* Define a imagem de fundo */
+    background-size: cover; /* Redimensiona a imagem para cobrir todo o corpo */
+    background-position: center; /* Centraliza a imagem no corpo */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    height: 100vh;
+}
+
+/* Estilizando a div "page" para centralizar o formulário */
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Estilizando o formulário de login */
+.formLogin {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco transparente */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.formLogin img {
+	width: 250px;
+	height: 185px;
+	flex-shrink: 0;
+	position: center;
+    padding: auto;
+	
+}
+
+.formLogin h1 {
+    font-size: 30px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.formLogin p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.formLogin label {
+    display: block;
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #000000;
+}
+
+.formLogin input[type="email"],
+.formLogin input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.formLogin a {
+    display: block;
+    font-size: 14px;
+    text-align: right;
+    color: #007bff;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.formLogin input[type="submit"] {
+    background-color: #FF1493;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.formLogin input[type="submit"]:hover {
+    background-color: #DB7093;
+}

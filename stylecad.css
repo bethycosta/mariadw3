@@ -1,0 +1,95 @@
+/* Reset de margens e preenchimentos para o body */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #FFC0CB;
+    background-image: url("img/img1.png"); /* Define uma imagem de fundo */
+}
+
+/* Estilizando a div "page" que envolve o formulário */
+.page {
+    display: flex; /* Usando flexbox para centralizar vertical e horizontalmente */
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* A div "page" ocupa 100% da altura da viewport */
+}
+
+/* Estilizando o formulário de cadastro */
+.formCadastro {
+    background-color: #fff; /* Fundo branco para o formulário */
+    padding: 20px; /* Espaçamento interno de 20px */
+    border-radius: 15px; /* Borda arredondada */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    text-align: center; /* Alinhamento do texto centralizado */
+    max-width: 400px; /* Largura máxima do formulário */
+    width: 100%; /* Largura de 100% do contêiner pai */
+}
+
+/* Estilizando a imagem dentro do formulário */
+.formCadastro img {
+    width: 350px;
+    height: 135px;
+    flex-shrink: 0; /* Não permitir que a imagem encolha com base no conteúdo */
+    position: center; /* Note que "center" não é uma propriedade CSS válida para "position" */
+}
+
+/* Estilizando parágrafos dentro do formulário */
+.formCadastro p {
+    font-size: 16px;
+    color: #777;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+/* Estilizando rótulos dos campos de entrada */
+.formCadastro label {
+    display: block;
+    font-size: 14px;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* Estilizando campos de entrada de texto, email, senha e telefone */
+.formCadastro input[type="text"],
+.formCadastro input[type="email"],
+.formCadastro input[type="password"],
+.formCadastro input[type="telefone"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Estilizando o botão de envio do formulário */
+.formCadastro input[type="submit"] {
+    background-color: #FF1493;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.formCadastro input[type="submit"]:hover {
+    background-color: #DB7093;
+}
+
+/* Estilizando o link de volta para a tela de login */
+.formCadastro a {
+    display: block;
+    font-size: 14px;
+    text-align: right;
+    color: 	#00BFFF;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+/* Estilizando mensagens de erro, alinhando à esquerda */
+.error-message {
+    text-align: left;
+}
